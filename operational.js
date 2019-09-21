@@ -44,7 +44,7 @@ var relativeContainer = document.createElement("DIV");
   text.appendChild(likebutton);
 
   var dislikebutton = document.createElement("i");
-  dislikebutton.classList.add('fa', 'fa-thumbs-up', 'thumbs', 'dislikebutton');
+  dislikebutton.classList.add('fa', 'fa-thumbs-down', 'thumbs', 'dislikebutton');
   dislikebutton.style="font-size:48px;color:white";
   text.appendChild(dislikebutton);
 
