@@ -1,0 +1,247 @@
+html, body {
+  padding: 0;
+  position: absolute;
+  min-width: 100%;
+  height:auto; 
+  overflow-x: hidden;
+
+
+  font-size: 20px;
+}
+
+.gallery {
+  position: relative;
+  padding: 10 10;
+  margin-top:10px;
+}
+
+.gallery_scroller {
+   /* snap mandatory on horizontal axis  */
+  scroll-snap-type: x mandatory;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  display: flex;
+  align-items: center;
+
+  height: 90vh;
+  
+  /* Enable Safari touch scrolling physics which is needed for scroll snap */
+  -webkit-overflow-scrolling: touch;
+
+  scroll-behavior: smooth;
+}
+
+
+.gallery_scroller div {
+   /* snap align center  */
+  scroll-snap-align: center;
+  position: relative;
+  min-width: 45%;
+  transition: 1s;
+}
+
+
+.gallery_scroller div .isActive
+{
+  height:65%;
+
+  margin: 10px;
+}
+
+.gallery_scroller img {
+  border-radius: 10px;
+}
+
+.gallery_scroller div.colored_card {
+  min-width: 45%;
+
+  border-radius: 10px;
+ }
+
+ .colored_card {
+  min-width: 45%;
+
+  border-radius: 10px;
+ }
+
+.gallery div.note {
+  position: absolute;
+
+  /* vertically align center */
+  top:  50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+
+  background: rgba(0,0,0, 0.6);
+  padding: 20px;
+  position: absolute;
+
+  font-size: 4em;
+  color: white;
+}
+
+
+.gallery .btn {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 30px;
+  width: 30px;
+
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.5);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  z-index: 1;
+}
+
+.gallery .btn.next {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="28" height="28" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M25.557 14.7L13.818 2.961 16.8 0l16.8 16.8-16.8 16.8-2.961-2.961L25.557 18.9H0v-4.2z" fill="%23FFF" fill-rule="evenodd"/></svg>');
+  right: 10px;
+}
+
+.gallery .btn.prev {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="28" height="28" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M33.6 14.7H8.043L19.782 2.961 16.8 0 0 16.8l16.8 16.8 2.961-2.961L8.043 18.9H33.6z" fill="%23FFF" fill-rule="evenodd"/></svg>');
+  left: 10px;
+}
+
+.gallery_scroller > div.colored_card:nth-of-type(1) { background-color: #e8eaf6; }
+.gallery_scroller > div.colored_card:nth-of-type(2) { background-color: #c5cae9; }
+.gallery_scroller > div.colored_card:nth-of-type(3) { background-color: #9fa8da; }
+.gallery_scroller > div.colored_card:nth-of-type(4) { background-color: #7986cb; }
+.gallery_scroller > div.colored_card:nth-of-type(5) { background-color: #5c6bc0; }
+.gallery_scroller > div.colored_card:nth-of-type(6) { background-color: #3f51b5; }
+.gallery_scroller > div.colored_card:nth-of-type(7) { background-color: #3949ab; }
+.gallery_scroller > div.colored_card:nth-of-type(8) { background-color: #303f9f; }
+.gallery_scroller > div.colored_card:nth-of-type(9) { background-color: #283593; }
+.gallery_scroller > div.colored_card:nth-of-type(10) { background-color: #1a237e; }
+
+.relativeContainer {
+  position: relative;
+  width: auto;
+  height: 100%;
+
+} 
+
+.container {
+  position: relative;
+  width: 100%;
+
+}
+
+.image {
+  display: relative;
+  width: inherit;
+  height: 50%;
+}
+
+
+.overlay {
+  position: relative;
+  bottom: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.8);;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .1s ease;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.relativeContainer:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height:100%;
+}
+
+.text > button {
+  background-color: rgb(230, 78, 59); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.text > .movietitle {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.text > .genre{
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+
+div.likedislikeratio {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  right: 0;
+  width: 100%;
+  height: 20px;
+  background-image: linear-gradient(90deg,rgb(0,255,0) 50%,rgb(255,0,0) 50%);
+  border-radius: 20px;
+}
+
+.likebutton {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width: 5%;
+  height: auto;
+  padding:10%;
+  
+
+}
+.dislikebutton {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  width: 5%;
+  height: auto;
+  padding:10%;
+}
+
+.thumbs
+{
+  text-shadow: 0 0 30px #171717;
+}
